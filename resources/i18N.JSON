@@ -1,0 +1,28 @@
+[
+    {
+        "jpm.am.general.search.addtofav": "Add To Favorite",
+        "jpm.am.general.search.clearfilters": "Clear Filters",
+        "jpm.am.general.search.newest": "Newest",
+        "jpm.am.general.search.of": "of",
+        "jpm.am.general.search.download": "Download",
+        "jpm.am.general.search.results": "Results",
+        "jpm.am.general.search.pagelimit": "20 Results Per Page",
+        "jpm.am.general.search.maxpagelimit": "100 Results Per Page",
+        "jpm.am.general.search.emailthis": "Email This",
+        "jpm.am.general.search.didyoumean": "Did you mean:",
+        "jpm.am.general.search.all": "All",
+        "jpm.am.general.search.filterresults": "Filter Results",
+        "jpm.am.general.search.sortresults": "Sort Results",
+        "jpm.am.general.search.relevance": "Relevance",
+        "jpm.am.general.search.refinedby": "Refine By:",
+        "jpm.am.general.search.loadmore": "Load More",
+        "jpm.am.general.search.sortby": "Sort By:",
+        "jpm.am.general.search.searchinput": "Search Input",
+        "jpm.am.general.search.oldest": "Oldest",
+        "jpm.am.general.search.close": "Close",
+        "jpm.am.general.search.allresult": "All Results Per Page",
+        "jpm.am.general.search.searchtext": "Search",
+        "jpm.am.general.search.resultsfor": "Results for",
+        "jpm.am.general.search.addto": "Add To…"
+    }
+]

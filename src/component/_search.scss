@@ -1,0 +1,191 @@
+.search {
+    height: 57px;
+    float: right;
+    background-color: #f2f0f1;
+    margin-bottom: 30px;
+    width: 75%;
+    position: relative;
+    &_hide {
+        display: none;
+    }
+
+    &_result-section {
+        width: 100%;
+        float: left;
+        margin-bottom: 3px;
+        &_text {
+            @include map-font-style(body-copy-normal, jp-large);
+            line-height: 1.63;
+        }
+    }
+
+    &_btn {
+        width: 110px;
+        height: 30px;
+        background-color: map-get($jp-colors,pacific-blue);;
+        border: none;
+        cursor: pointer;
+        margin: 15px 8px 0 0;
+        float: right;
+        position: absolute;
+        right: 1%;
+    }
+
+    &_text {
+        width: 80%;
+        height: 92%;
+        background-color: #f2f0f1;
+        border: 0 none;
+        font-size: x-large;
+        color: #2b2b2b;
+        padding-left: 2px;
+        margin-right: 5%;
+
+        &:focus {
+            border: none;
+            outline-width: 0;
+        }
+    }
+
+    &_text_btn {
+        height: 18px;
+        @include map-font-style(link-text, jp-large);
+        text-align: right;
+        color: #ffffff;
+        padding: 10%;
+        text-transform: uppercase;
+
+        &_arrow {
+            padding: 0 0 0 5px;
+            font-size: 10px;
+            @include icon(icon-right);
+            font-weight: 700;
+        }
+    }
+
+    input::-webkit-calendar-picker-indicator {
+        display: none;
+    }
+}
+#search-field{
+    -webkit-user-select:text;
+}
+.sug-mobile{
+    width: 100%;
+    display: block;
+}
+.react-autosuggest {
+    &__container {
+        position: relative;
+        width:100%;
+        height: 98%;
+        display: inline-block;
+    }
+
+    &__input {
+        width: 100%;
+        height: 100%;
+        background-color: #f2f0f1;
+        border: 0 none;
+        font-size: x-large;
+        color: #2b2b2b;
+        padding-left: 10px;
+    }
+
+    &__input--focused {
+        outline: none;
+    }
+
+    &__input--open {
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+
+    &__suggestions-container {
+        position: relative;
+        width: 84%;
+        height: 92%;
+        display: none;
+    }
+
+    &__suggestions-container--open {
+        display: block;
+        position: absolute;
+        top: 51px;
+        //width: 116.4%;
+        width:100%;// changes for JPM-6340
+        height: 230px;
+        overflow-y: auto;
+        border: 1px solid map-get($jp-colors, grey-dropdown);
+        background-color: map-get($jp-colors, white);
+        font-size: 16px;
+        border-bottom-left-radius: 4px;
+        border-bottom-right-radius: 4px;
+        z-index: 2;
+        box-shadow: 0 7px 13px 0 rgba(0, 0, 0, .06);
+    }
+
+    &__suggestions-list {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+    }
+
+    &__suggestion {
+        cursor: pointer;
+        padding: 10px 20px;
+    }
+
+    &__suggestion--highlighted {
+        background-color: #ddd;
+    }
+}
+.jp-search{
+    @include icon(icon-utility-search);
+}
+#search-container .react-autosuggest__container{
+    width: 100%;
+}
+@media #{$jp-large} {
+    .search {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    #search-container .react-autosuggest {
+        &__container {
+            width: 100%;
+        }
+    }
+    .circleButton{
+        vertical-align: top;
+        &:first-child{
+            margin-left:0;
+        }
+        &::after {
+            color:map-get($jp-colors, white);
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translate(0, -50%);
+            text-indent: 8px;
+            font-size: 18px;
+        }
+        position: relative;
+        cursor: pointer;
+        margin: 10px 0 0 6px;
+        height: 35px;
+        width: 35px;
+        background: map-get($jp-colors,pacific-blue);
+        border-radius: 50%;
+        display: inline-block;
+        font-size:0;
+        border: none;
+    }
+    .pull-right{
+        float: right;
+        margin-right: 10px;
+        position: absolute;
+        right:1%;
+    }
+}

@@ -1,0 +1,181 @@
+.filter-accordion {
+  width: 100%;
+  margin-bottom: 20px;
+  &_accordion-content {
+    padding: 1rem 0rem;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10%;
+    overflow-y: auto;
+  }
+  &_hide {
+    display: none;
+  }
+  &_show {
+    display: inherit;
+  }
+  &_fold {
+    border-top: 2px solid #abb0b8;
+    padding: 1px;
+    &:last-child {
+      border-bottom: 2px solid #abb0b8;
+    }
+    &_trigger {
+      text-align: left;
+      width: 100%;
+      padding: 11px 0 11px 0;
+      border: none; //outline: none;
+      background: none;
+      cursor: pointer;
+      @include map-font-style(link-text, jp-large);
+      &_icon {
+        display: block;
+        float: left;
+        font-weight: 700;
+        padding-right: 5px;
+        color: map-get($jp-colors, dark-grey);
+        height: 9px;
+        margin-top: 1px;
+      }
+    }
+    &_content {
+      display: none;
+      max-height: 0;
+      opacity: 0;
+      transition: max-height 400ms linear;
+      &.open {
+        display: block;
+        max-height: 225px;
+        opacity: 1;
+        overflow: hidden;
+        overflow-y: auto;
+      }
+    }
+    &_ul {
+      list-style: none;
+      padding-left: 20px;
+      margin: 0;
+    }
+    &_text {
+      @include map-font-style(body-copy-normal, jp-large);
+      line-height: normal;
+      height: 18px;
+      margin-bottom: 7px;
+    }
+    &_btn {
+      text-align: left;
+      width: 100%;
+      border: none; //outline: none;
+      background: none;
+      cursor: pointer;
+      height: auto;
+    }
+  }
+  &_filter {
+    //margin-left: 32px;
+    margin-top: 29px;
+    &_refined {
+      @include map-font-variation("regular");
+      height: 20px;
+      font-size: 18px;
+      color: map-get($jp-colors, charcoal-grey);
+      margin-bottom: auto;
+    }
+    &_refinedTexts {
+      height: auto;
+    }
+    &_text {
+      @include map-font-style(body-copy-normal, jp-large);
+      line-height: normal;
+      background-color: #f2f0f1;
+      padding: 6px 10px 6px 11px;
+      margin: 2px;
+      display: inline-block;
+    }
+    &_cross {
+      @include icon(icon-close2);
+      margin-left: 10px;
+      cursor: pointer;
+      font-size: x-small;
+    }
+    &_clear {
+      height: 30px;
+      @include map-font-style(nav-link, jp-large);
+      color: map-get($jp-colors, charcoal-grey);
+      cursor: pointer;
+      display: block;
+      padding-top: 4%;
+      text-decoration: underline;
+    }
+  }
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  /* Track */
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 10px;
+  }
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: grey;
+    border-radius: 10px;
+  }
+}
+
+.search-active {
+  @include icon(icon-Arrow-Up-Black);
+}
+
+.search-inactive {
+  @include icon(icon-Arrow-Down_Black);
+}
+
+@media #{$jp-large} {
+  .filter-accordion {
+    &_accordion-content {
+      border-radius: inherit;
+      padding-left: 4px;
+      padding-top: 0;
+      z-index: 10;
+      position: absolute;
+      width: 100%;
+      background: white;
+    }
+    &_filter {
+      margin: auto;
+      &_icons {
+        float: right;
+        cursor: pointer;
+      }
+      &_clear {
+        padding: 5px 5px 0 5px;
+        height: auto;
+        text-decoration: underline;
+      }
+      &_close {
+        @include map-font-style(nav-link, jp-large);
+        padding: 1px;
+        &::after {
+          content: "\e923";
+          @include map-font-variation('icons');
+          font-size: x-small;
+        }
+      }
+      &_down-icon {
+        float: right;
+        margin-top: 4px;
+        &::after {
+          content: '\E900';
+          @include map-font-variation('icons');
+        }
+      }
+    }
+    &_refined {
+      width: 100%;
+      min-height: 50px;
+      border: 1px solid map-get($jp-colors, charcoal-grey);
+      padding: 13px;
+    }
+  }
+}
